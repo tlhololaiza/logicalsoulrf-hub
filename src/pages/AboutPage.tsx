@@ -36,9 +36,17 @@ const AboutPage = () => (
 
             <div className="mt-10 p-6 rounded-lg bg-card border border-border">
               <h3 className="font-display text-lg text-primary mb-3">YouTube Channel</h3>
-              <p className="text-muted-foreground font-body text-sm leading-relaxed">
+              <p className="text-muted-foreground font-body text-sm leading-relaxed mb-4">
                 Welcome to the official YouTube channel of LogicalsoulRF. Here you'll find Bacardi sessions, DJ mixes, music releases, and exclusive content from one of the rising sounds in the scene.
               </p>
+              <a
+                href="https://www.youtube.com/@logicalsoulrf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-display text-sm hover:bg-primary/90 transition-colors"
+              >
+                Visit Channel
+              </a>
             </div>
           </div>
         </div>

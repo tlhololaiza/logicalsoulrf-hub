@@ -20,7 +20,7 @@ const VideosPage = () => (
         <div className="mb-12">
           <div className="aspect-video rounded-lg overflow-hidden glow-gold">
             <iframe
-              src="https://www.youtube.com/embed?listType=user_uploads&list=logicalsoulrf"
+              src="https://www.youtube.com/embed/T-Y_piKWTH4"
               width="100%"
               height="100%"
               frameBorder="0"

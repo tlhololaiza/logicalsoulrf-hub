@@ -14,7 +14,7 @@ const BookingsPage = () => {
     e.preventDefault();
     const subject = encodeURIComponent(`Booking Inquiry from ${form.name}`);
     const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
-    window.location.href = `mailto:oarabilestephens@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:juniortswhwane9@gmail.com?subject=${subject}&body=${body}`;
     toast({ title: "Opening your email client…", description: "Send the email to complete your booking request." });
   };
 
