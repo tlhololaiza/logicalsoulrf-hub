@@ -10,12 +10,23 @@ const BookingsPage = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Booking Inquiry from ${form.name}`);
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
-    window.location.href = `mailto:juniortswhwane9@gmail.com?subject=${subject}&body=${body}`;
-    toast({ title: "Opening your email client…", description: "Send the email to complete your booking request." });
+    try {
+      const response = await fetch("https://formspree.io/f/mwvrgvzz", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (response.ok) {
+        toast({ title: "Success!", description: "Your booking inquiry has been sent." });
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        toast({ title: "Error", description: "Failed to send inquiry. Please try again." });
+      }
+    } catch {
+      toast({ title: "Error", description: "Failed to send inquiry. Please try again." });
+    }
   };
 
   return (

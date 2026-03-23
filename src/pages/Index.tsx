@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Play, Music, ExternalLink } from "lucide-react";
+import { Play, Music, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageWrapper from "@/components/PageWrapper";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -63,7 +63,7 @@ const Index = () => (
             rel="noopener noreferrer"
           >
             <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 font-display tracking-wider gap-2">
-              <ExternalLink size={16} /> YouTube
+              <Video size={16} /> YouTube
             </Button>
           </a>
         </motion.div>
