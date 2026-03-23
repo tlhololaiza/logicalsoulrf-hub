@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import PageWrapper from "@/components/PageWrapper";
-import artistPortrait from "@/assets/artist-portrait.jpg";
+import artistPortrait from "@/assets/artist-portrait 2.jpeg";
 
 const AboutPage = () => (
   <PageWrapper>

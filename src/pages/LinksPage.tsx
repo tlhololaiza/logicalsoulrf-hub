@@ -1,4 +1,4 @@
-import { ExternalLink, Music, Video, Facebook, Instagram, Twitter, Send, Heart } from "lucide-react";
+import { ExternalLink, Music, Video, Facebook, Instagram, X, Send, Heart } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
 import { motion } from "framer-motion";
 
@@ -9,7 +9,7 @@ const links = [
   { icon: Heart, label: "Tip LogicalsoulRF", url: "https://streamlabs.com/sl_id_e1a21884-fd1f-3dfd-852f-55f586d1621a" },
   { icon: Facebook, label: "Facebook", url: "https://www.facebook.com/RusHDaDeej" },
   { icon: Instagram, label: "Instagram", url: "https://instagram.com/_oarabile.e" },
-  { icon: Twitter, label: "Twitter (X)", url: "https://twitter.com/Oarabil10493200" },
+  { icon: X, label: "X (Twitter)", url: "https://twitter.com/Oarabil10493200" },
   { icon: Send, label: "Telegram", url: "https://t.me/Logicalsoul" },
 ];
 
