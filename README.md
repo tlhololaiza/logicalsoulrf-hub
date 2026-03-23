@@ -19,3 +19,44 @@ A modern, responsive website for LogicalsoulRF, a South African music artist. Bu
 - **Dark Theme**: Modern dark UI with teal accent colors
 - **Smooth Animations**: Framer Motion animations for enhanced user experience
 - **Custom UI Components**: Built with shadcn/ui and Radix UI
+
+## Technologies Used
+
+### Frontend Framework & Build Tools
+- **React 18** - JavaScript library for building user interfaces
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Next generation frontend build tool
+- **React Router** - Client-side routing
+
+### Styling & UI
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality React components
+- **Radix UI** - Unstyled, accessible component primitives
+- **PostCSS** - CSS transformation tool
+
+### Animations & Effects
+- **Framer Motion** - Animation library for React
+- **Embla Carousel** - Carousel component library
+
+### Forms & Validation
+- **React Hook Form** - Performant, flexible form handling
+- **Zod** - TypeScript-first schema validation
+
+### Icons & Typography
+- **Lucide React** - Beautiful icon library
+- **Google Fonts** - Oswald and Inter typefaces
+
+### Additional Libraries
+- **TanStack React Query** - Server state management
+- **Recharts** - Composable charting library
+- **Sonner** - Toast notifications
+- **Next Themes** - Theme management
+
+### Development & Testing
+- **ESLint** - JavaScript linting
+- **Vitest** - Unit testing framework
+- **Playwright** - E2E testing framework
+- **TypeScript ESLint** - TypeScript linting
+
+### Backend Integration
+- **Formspree** - Form submission service for bookings
