@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Play, Music, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageWrapper from "@/components/PageWrapper";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/artist-portrait 3.jpeg";
 import albumCover from "@/assets/album-cover-1.jpg";
 
 const Index = () => (
@@ -13,7 +13,7 @@ const Index = () => (
       <img
         src={heroBg}
         alt="LogicalsoulRF performing"
-        className="absolute inset-0 w-full h-full object-cover opacity-60"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-60"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       <div className="relative z-10 text-center px-4 w-full">
