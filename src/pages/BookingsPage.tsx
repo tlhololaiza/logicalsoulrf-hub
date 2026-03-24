@@ -1,10 +1,18 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import PageWrapper from "@/components/PageWrapper";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
+
+const services = [
+  { label: "Live Performances", desc: "High-energy shows at venues & festivals" },
+  { label: "Club Gigs", desc: "Energy-packed DJ sets for any event" },
+  { label: "Collaborations", desc: "Feature on tracks & remix projects" },
+  { label: "Studio Sessions", desc: "Production & recording sessions" },
+];
 
 const BookingsPage = () => {
   const { toast } = useToast();
@@ -31,49 +39,119 @@ const BookingsPage = () => {
 
   return (
     <PageWrapper>
-      <section className="py-12 sm:py-16 md:py-20 px-4">
-        <div className="container mx-auto max-w-3xl">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display text-center text-gradient-gold mb-3 sm:mb-4">
+      {/* Hero Section */}
+      <section className="py-1 sm:py-2 md:py-2 px-4 bg-gradient-to-b from-background to-background/50">
+        <div className="container mx-auto max-w-4xl text-center">
+          <motion.h1 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display text-gradient-gold mb-4"
+          >
             Book LogicalsoulRF
-          </h1>
-          <p className="text-center text-sm sm:text-base md:text-lg text-muted-foreground font-body mb-10 sm:mb-12 md:mb-16">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-sm sm:text-base md:text-lg text-muted-foreground font-body"
+          >
             Available for performances, events, collaborations, and studio sessions.
-          </p>
+          </motion.p>
+        </div>
+      </section>
 
+      {/* Services Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <motion.h2 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl sm:text-3xl md:text-4xl font-display text-gradient-gold mb-8 sm:mb-10"
+          >
+            Services
+          </motion.h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {services.map((service, i) => (
+              <motion.div
+                key={service.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="p-6 sm:p-8 rounded-lg bg-card border border-border hover:border-primary/50 hover:shadow-[0_0_30px_hsl(156_70%_36_/_0.2)] transition-all group"
+              >
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
+                  <Calendar size={24} className="text-primary" />
+                </div>
+                <h3 className="font-display text-lg sm:text-xl text-foreground mb-2">{service.label}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">{service.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact & Form Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 bg-primary/5">
+        <div className="container mx-auto max-w-4xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Info */}
-            <div className="space-y-6">
-              <h2 className="font-display text-xl sm:text-2xl text-primary">Contact Details</h2>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-sm sm:text-base text-foreground/85">
-                  <MapPin size={18} className="text-primary shrink-0" />
-                  <span className="font-body">South Africa</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm sm:text-base text-foreground/85">
-                  <Phone size={18} className="text-primary shrink-0" />
-                  <a href="tel:0817082326" className="font-body hover:text-primary transition-colors">081 708 2326</a>
-                </div>
-                <div className="flex items-center gap-3 text-sm sm:text-base text-foreground/85">
-                  <Mail size={18} className="text-primary shrink-0" />
-                  <a href="mailto:oarabilestephens@gmail.com" className="font-body hover:text-primary transition-colors">oarabilestephens@gmail.com</a>
-                </div>
-              </div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="font-display text-2xl sm:text-3xl text-gradient-gold mb-8">Get In Touch</h2>
+              <div className="space-y-5">
+                <a href="tel:0817082326" className="flex items-start gap-4 p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-all group">
+                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors">
+                    <Phone size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-foreground mb-1">Phone</h3>
+                    <p className="text-sm text-muted-foreground">081 708 2326</p>
+                  </div>
+                </a>
+                
+                <a href="mailto:oarabilestephens@gmail.com" className="flex items-start gap-4 p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-all group">
+                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors">
+                    <Mail size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-foreground mb-1">Email</h3>
+                    <p className="text-sm text-muted-foreground">oarabilestephens@gmail.com</p>
+                  </div>
+                </a>
 
-              <div className="mt-8 md:mt-0">
-                <h3 className="font-display text-base sm:text-lg text-foreground mb-3">Services</h3>
-                <ul className="space-y-2 text-sm sm:text-base text-muted-foreground font-body">
-                  <li>• Live performances</li>
-                  <li>• Club gigs</li>
-                  <li>• Collaborations</li>
-                  <li>• Studio sessions</li>
-                </ul>
+                <div className="flex items-start gap-4 p-4 rounded-lg bg-card border border-border">
+                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <MapPin size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-foreground mb-1">Location</h3>
+                    <p className="text-sm text-muted-foreground">South Africa</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <motion.form 
+              onSubmit={handleSubmit} 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="space-y-5"
+            >
+              <h2 className="font-display text-2xl sm:text-3xl text-gradient-gold mb-8">Send Inquiry</h2>
               <div>
-                <label className="block text-xs sm:text-sm font-body text-muted-foreground mb-1.5">Name</label>
+                <label className="block text-xs sm:text-sm font-body text-muted-foreground mb-2">Full Name</label>
                 <Input
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -84,7 +162,7 @@ const BookingsPage = () => {
                 />
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-body text-muted-foreground mb-1.5">Email</label>
+                <label className="block text-xs sm:text-sm font-body text-muted-foreground mb-2">Email Address</label>
                 <Input
                   type="email"
                   value={form.email}
@@ -96,21 +174,21 @@ const BookingsPage = () => {
                 />
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-body text-muted-foreground mb-1.5">Message</label>
+                <label className="block text-xs sm:text-sm font-body text-muted-foreground mb-2">Message</label>
                 <Textarea
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   required
                   maxLength={1000}
                   rows={5}
-                  className="bg-card border-border font-body text-sm"
-                  placeholder="Tell us about your event…"
+                  className="bg-card border-border font-body text-sm resize-none"
+                  placeholder="Tell us about your event or project…"
                 />
               </div>
-              <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-display tracking-wider text-sm sm:text-base">
+              <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-display tracking-wider text-sm sm:text-base py-2.5">
                 Send Inquiry
               </Button>
-            </form>
+            </motion.form>
           </div>
         </div>
       </section>
