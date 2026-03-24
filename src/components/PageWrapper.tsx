@@ -6,7 +6,7 @@ const PageWrapper = ({ children }: { children: ReactNode }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, ease: "easeOut" }}
-    className="min-h-screen pt-16"
+    className="min-h-screen pt-14 sm:pt-16"
   >
     {children}
   </motion.div>

@@ -9,9 +9,9 @@ const socials = [
 ];
 
 const Footer = () => (
-  <footer className="border-t border-border bg-background py-10">
-    <div className="container mx-auto px-4 flex flex-col items-center gap-6">
-      <div className="flex gap-5">
+  <footer className="border-t border-border bg-background py-8 sm:py-10">
+    <div className="container mx-auto px-4 flex flex-col items-center gap-4 sm:gap-6">
+      <div className="flex gap-3 sm:gap-5">
         {socials.map((s) => (
           <a
             key={s.label}
@@ -21,11 +21,11 @@ const Footer = () => (
             className="text-muted-foreground hover:text-primary transition-colors"
             aria-label={s.label}
           >
-            <s.icon size={20} />
+            <s.icon size={18} className="sm:w-5 sm:h-5" />
           </a>
         ))}
       </div>
-      <p className="text-muted-foreground text-sm font-body">
+      <p className="text-muted-foreground text-xs sm:text-sm font-body text-center">
         © {new Date().getFullYear()} LogicalsoulRF. All rights reserved.
       </p>
     </div>

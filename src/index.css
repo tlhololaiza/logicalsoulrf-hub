@@ -81,4 +81,17 @@
   .glow-gold {
     box-shadow: var(--shadow-glow);
   }
+
+  /* Mobile-first responsive utilities */
+  @media (max-width: 640px) {
+    /* Improve readability on small screens */
+    h1, h2, h3, h4, h5, h6 {
+      word-break: break-word;
+    }
+
+    /* Ensure buttons don't overflow */
+    button {
+      @apply overflow-hidden text-ellipsis;
+    }
+  }
 }

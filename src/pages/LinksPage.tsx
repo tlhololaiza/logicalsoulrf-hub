@@ -16,16 +16,16 @@ const links = [
 
 const LinksPage = () => (
   <PageWrapper>
-    <section className="py-20 px-4">
+    <section className="py-12 sm:py-16 md:py-20 px-4">
       <div className="container mx-auto max-w-md">
-        <h1 className="text-5xl font-display text-center text-gradient-gold mb-2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display text-center text-gradient-gold mb-2">
           LogicalsoulRF
         </h1>
-        <p className="text-center text-muted-foreground font-body mb-12">
+        <p className="text-sm sm:text-base md:text-lg text-center text-muted-foreground font-body mb-8 sm:mb-10 md:mb-12">
           Sound. Emotion. Energy.
         </p>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 sm:gap-4">
           {links.map((l, i) => (
             <motion.a
               key={l.label}
@@ -35,15 +35,15 @@ const LinksPage = () => (
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="flex items-center gap-4 p-4 rounded-lg bg-card border border-border hover:border-primary/50 hover:glow-gold transition-all group"
+              className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-card border border-border hover:border-primary/50 hover:glow-gold transition-all group"
             >
               {l.image ? (
-                <img src={l.image} alt={l.label} className="w-5 h-5 shrink-0" />
+                <img src={l.image} alt={l.label} className="w-4 sm:w-5 h-4 sm:h-5 shrink-0" />
               ) : (
-                <l.icon size={20} className="text-primary shrink-0" />
+                <l.icon size={18} className="sm:w-5 sm:h-5 text-primary shrink-0" />
               )}
-              <span className="flex-1 font-display tracking-wider text-foreground">{l.label}</span>
-              <ExternalLink size={16} className="text-muted-foreground group-hover:text-primary transition-colors" />
+              <span className="flex-1 font-display tracking-wider text-sm sm:text-base text-foreground">{l.label}</span>
+              <ExternalLink size={14} className="sm:w-4 sm:h-4 text-muted-foreground group-hover:text-primary transition-colors" />
             </motion.a>
           ))}
         </div>
