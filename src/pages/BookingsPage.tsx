@@ -20,7 +20,7 @@ const BookingsPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://formspree.io/f/mwvrgvzz", {  //https://formspree.io/f/xgopeejp
+      const response = await fetch("https://formspree.io/f/xgopeejp", {  //https://formspree.io/f/xgopeejp
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
