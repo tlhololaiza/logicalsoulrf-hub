@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import PageWrapper from "@/components/PageWrapper";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import { motion } from "framer-motion";
 
 const services = [
@@ -15,25 +15,24 @@ const services = [
 ];
 
 const BookingsPage = () => {
-  const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://formspree.io/f/mwvrgvzz", {
+      const response = await fetch("https://formspree.io/f/mwvrgvzz", {  //https://formspree.io/f/xgopeejp
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
       if (response.ok) {
-        toast({ title: "Success!", description: "Your booking inquiry has been sent." });
+        toast.success("Success!", { description: "Your booking inquiry has been sent." });
         setForm({ name: "", email: "", message: "" });
       } else {
-        toast({ title: "Error", description: "Failed to send inquiry. Please try again." });
+        toast.error("Error", { description: "Failed to send inquiry. Please try again." });
       }
     } catch {
-      toast({ title: "Error", description: "Failed to send inquiry. Please try again." });
+      toast.error("Error", { description: "Failed to send inquiry. Please try again." });
     }
   };
 
